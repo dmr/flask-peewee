@@ -61,3 +61,10 @@ class Note(db.Model):
     message = TextField()
     status = IntegerField(choices=((1, 'live'), (2, 'deleted')), null=True)
     created_date = DateTimeField(default=datetime.datetime.now)
+
+
+def create_tables():
+    User.create_table()
+    Relationship.create_table()
+    Message.create_table()
+    Note.create_table()
